@@ -1,0 +1,18 @@
+= SW Notifier
+
+Notifies like SW through writing message to socket.
+
+== Dependencies
+
+[as3corelib] http://github.com/mikechambers/as3corelib
+[BetweenAS3] http://www.libspark.org/wiki/BetweenAS3
+
+== How to use
+
+  re 'socket'
+  s = TCPSocket.open('localhost', 12345)
+  s.write("foo\nbar\nbaz")
+
+== Copyright
+
+Copyright (c) 2010 MIKAMI Yoshiyuki. See LICENSE for details.

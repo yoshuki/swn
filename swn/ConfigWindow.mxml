@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Window xmlns:fx="http://ns.adobe.com/mxml/2009"
+          xmlns:s="library://ns.adobe.com/flex/spark"
+          xmlns:mx="library://ns.adobe.com/flex/mx"
+          width="400" height="300" minimizable="false" maximizable="false" showStatusBar="false"
+          title="設定" windowComplete="initWin(event)" close="saveConfig()">
+  <s:layout>
+    <s:BasicLayout/>
+  </s:layout>
+  <fx:Declarations>
+    <!-- 非ビジュアルエレメント (サービス、値オブジェクトなど) をここに配置 -->
+  </fx:Declarations>
+  <fx:Script source="actionscripts/configWindow.as"/>
+  <s:VGroup width="100%" height="100%">
+    <mx:Form fontSize="14" width="100%" height="100%">
+      <mx:FormItem label="ポート番号">
+        <s:DropDownList id="listenPort">
+          <mx:ArrayCollection>
+            <fx:int>12345</fx:int>
+            <fx:int>23456</fx:int>
+            <fx:int>34567</fx:int>
+            <fx:int>45678</fx:int>
+            <fx:int>56789</fx:int>
+          </mx:ArrayCollection>
+        </s:DropDownList>
+        <s:Label color="0xFF0000" fontSize="10" text="※次回起動時に反映されます。"/>
+      </mx:FormItem>
+      <mx:HRule width="100%" height="10"/>
+      <mx:FormItem label="文字色">
+        <mx:ColorPicker id="textColor" width="50" height="20"/>
+      </mx:FormItem>
+      <mx:FormItem label="背景色">
+        <mx:ColorPicker id="backColor" width="50" height="20"/>
+      </mx:FormItem>
+      <mx:FormItem label="背景透明度">
+        <s:NumericStepper id="backAlpha" minimum="0" maximum="100" stepSize="1"/>
+        <s:Label text="0(透明) ～ 100(不透明) [%]"/>
+      </mx:FormItem>
+      <mx:HRule width="100%" height="10"/>
+      <mx:FormItem label="BGM">
+        <s:TextInput id="bgm" width="256"/>
+        <s:HGroup>
+          <s:Button label="選択" click="selectBgm()"/>
+          <s:Button label="削除" click="bgm.text = ''"/>
+        </s:HGroup>
+      </mx:FormItem>
+    </mx:Form>
+    <s:HGroup width="100%" horizontalAlign="right" paddingRight="10" paddingBottom="10">
+      <s:Button label="デフォルト" click="initConfig()"/>
+      <s:Button label="閉じる" click="close()"/>
+    </s:HGroup>
+  </s:VGroup>
+</s:Window>

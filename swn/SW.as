@@ -113,7 +113,7 @@ package swn {
       var matches:Array = message.match(/^([RGY])(:)(.*)$/ms);
       if (matches) {
         switch (matches[1]) {
-          case 'R': textColor = 0xFF0000; break;
+          case 'R': textColor = 0xFF3333; break;
           case 'G': textColor = 0x00FF00; break;
           case 'Y': textColor = 0xFFFF00; break;
         }

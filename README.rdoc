@@ -9,10 +9,10 @@ Notifies like SW through writing message to socket.
 
 == How to use
 
-  re 'socket'
-  s = TCPSocket.open('localhost', 12345)
-  s.write("foo\nbar\nbaz")
+  # In case of Ruby.
+  require 'socket'
+  TCPSocket.open('localhost', 12345) {|s| s.write "foo\nbar\nbaz" }
 
 == Copyright
 
-Copyright (c) 2010 MIKAMI Yoshiyuki. See LICENSE for details.
+Copyright (c) 2010-2011 MIKAMI Yoshiyuki. See LICENSE for details.

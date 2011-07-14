@@ -79,10 +79,10 @@ private function initApp(event:FlexEvent):void {
 
       var socket:Socket = event.socket;
       Common.clientSockets.push(socket);
-      // 接続を受けたらメッセージを受け取って切る
+      // 接続を受けたらメッセージを受け取って切断
       socket.addEventListener(ProgressEvent.SOCKET_DATA, function (event:ProgressEvent):void {
-        // メッセージ受け取りは3つまで
-        if (Common.messages.length >= 3) {
+        // メッセージ受け取りは5つまで
+        if (Common.messages.length >= 5) {
           socket.writeUTFBytes('Message queue is full.');
         } else {
           var message:String = socket.readUTFBytes(socket.bytesAvailable);

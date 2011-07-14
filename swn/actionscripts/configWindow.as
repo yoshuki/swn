@@ -40,5 +40,5 @@ private function selectBgm():void {
   bgmFile.addEventListener(Event.SELECT, function (event:Event):void {
     bgm.text = bgmFile.nativePath;
   });
-  bgmFile.browse([new FileFilter('MP3 (*.mp3)', '*.mp3')]);
+  bgmFile.browse([new FileFilter('MP3(*.mp3)', '*.mp3')]);
 }

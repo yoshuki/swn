@@ -110,12 +110,12 @@ package swn {
 
       // 色指定があれば強制変更
       var textColor:uint = Common.config.textColor;
-      var matches:Array = message.match(/^([RGY])(:)(.*)$/ms);
+      var matches:Array = message.match(/^([RYG])(:)(.*)$/ms);
       if (matches) {
         switch (matches[1]) {
           case 'R': textColor = 0xFF3333; break;
-          case 'G': textColor = 0x00FF00; break;
           case 'Y': textColor = 0xFFFF00; break;
+          case 'G': textColor = 0x00FF00; break;
         }
         message = matches[3];
       }

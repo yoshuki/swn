@@ -37,7 +37,7 @@
         <s:Label text="0(透明) ～ 100(不透明) [%]"/>
       </mx:FormItem>
       <mx:HRule width="100%" height="10"/>
-      <mx:FormItem label="BGM">
+      <mx:FormItem label="BGM(MP3)">
         <s:TextInput id="bgm" width="256"/>
         <s:HGroup>
           <s:Button label="選択" click="selectBgm()"/>
